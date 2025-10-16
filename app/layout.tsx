@@ -8,8 +8,8 @@ const figtree = Figtree({
 });
 
 export const metadata: Metadata = {
-  title: "Article Preview Card",
-  description: "Frontend Mentor Challenge - Article Preview Card",
+  title: "Cursos Frontend - Cards",
+  description: "Lista de cursos generada desde un mock API",
 };
 
 export default function RootLayout({
@@ -19,8 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${figtree.className}`}>
-        <main>{children}</main>
+      <body className={figtree.className}>
+        <main className="container">{children}</main>
       </body>
     </html>
   );

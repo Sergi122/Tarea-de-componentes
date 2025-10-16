@@ -16,23 +16,27 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-/* Global styles */
 html, body {
-  height: 100%;
+  min-height: 100%;
   background-color: var(--yellow);
   font-family: "Figtree", sans-serif;
   font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block; /* ✅ permite flujo normal */
+  overflow-y: auto; /* ✅ activa scroll */
+  padding: 0;
+  margin: 0;
 }
 
-/* Layout principal */
 main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block; /* ✅ evita centrado forzado */
+  padding: 2rem;
   min-height: 100vh;
-  padding: 1rem;
+}
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  overflow: visible;
+  min-height: 100vh;
 }
