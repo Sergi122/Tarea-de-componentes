@@ -1,23 +1,29 @@
-import "@/components/articleCard.css";
-import AuthorInfo from "./AuthorInfo";
-import { Article } from "@/types/article";
+import "./articleCard.css";
+import Image from "next/image";
+import illustration from "@/public/images/illustration-article.svg";
+import avatar from "@/public/images/image-avatar.webp";
 
-interface ArticleCardProps {
-  article: Article;
-}
-
-const ArticleCard = ({ article }: ArticleCardProps) => {
+const ArticleCard = () => {
   return (
-    <div className="article-card">
-      <img src={article.image} alt={article.title} className="article-img" />
-      <div className="article-content">
-        <span className="tag">{article.category}</span>
-        <p className="date">Published {article.date}</p>
-        <h2 className="title">{article.title}</h2>
-        <p className="description">{article.description}</p>
-        <AuthorInfo name={article.author.name} image={article.author.image} />
+    <article className="card">
+      <Image
+        src={illustration}
+        alt="Illustration article"
+        className="card-image"
+      />
+      <div className="card-body">
+        <span className="tag">Learning</span>
+        <h1 className="title">HTML & CSS foundations</h1>
+        <p className="description">
+          These languages are the backbone of every website, defining structure,
+          content, and presentation.
+        </p>
+        <div className="author">
+          <Image src={avatar} alt="Author avatar" className="avatar" />
+          <span className="author-name">Greg Hooper</span>
+        </div>
       </div>
-    </div>
+    </article>
   );
 };
 
